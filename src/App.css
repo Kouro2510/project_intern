@@ -1,38 +1,154 @@
-.App {
-  text-align: center;
-}
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+ul li{
+    list-style-type: none;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.ml-40per{
+    margin-left: 40%;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.float-right{
+    float: right;
 }
-
-.App-link {
-  color: #61dafb;
+.flex{
+    display: flex;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.flex-row{
+    display: flex;
+    flex-direction: column;
+}
+.align-center{
+    align-items: center;
+}
+.w-25{
+    width: 25%;
+}
+.w-15{
+    width: 15%;
+}
+.w-10{
+    width: 10%;
+}
+.w-75{
+    width: 75%;
+}
+.h-25{
+    height: 25%;
+}
+.w-fit{
+    width: fit-content;
+}
+.text-center{
+    text-align: center;
+}
+.justify-content-center{
+    display: flex;
+    justify-content: center;
+}
+.gap-2{
+    gap: 2px;
+}
+.gap-5px{
+    gap: 5px;
+}
+.gap-3rem{
+    gap:3rem;
+}
+.fz-5{
+    font-size: 5px;
+}
+.fz-8{
+    font-size: 8px;
+}
+.fz-10{
+    font-size: 10px;
+}
+.mt-0{
+    margin-top: 0;
+}
+.mb-0{
+    margin-bottom: 0;
+}
+.mx-0{
+    margin: 0;
+}
+.ml-20{
+    margin-left: 20px;
+}
+.ml-10{
+    margin-left: 10px;
+}
+.py-15px{
+    padding: 15px 0;
+}
+.pb-2px{
+    padding-bottom: 2px;
+}
+.py-2{
+    padding: 2px 0;
+}
+.pr-5{
+    padding-right: 5px;
+}
+.mr-10px{
+    margin-right: 10px;
+}
+.mt-1{
+    margin-top: 1rem;
+}
+.mt-12px{
+    margin-top: 12px;
+}
+.ml-2{
+    margin-left: 2px;
+}
+.ml-1{
+    margin-left: 1px;
+}
+.ml-2px{
+    margin-left: 2px;
+}
+.mt-4px{
+    margin-top: 4px;
+}
+.underline{
+    text-decoration: underline;
+}
+.line-through{
+    text-decoration: line-through;
+}
+.text-red{
+    color: red;
+}
+.text-gray{
+    color: gray;
+}
+.fw-400{
+    font-weight: 400;
+}
+.justify-content-space{
+    display: flex;
+    justify-content: space-around;
+}
+.absolute{
+    position: absolute;
+}
+.point{
+    cursor: pointer;
+}
+a{
+    text-decoration: none;
+}
+.text-deepskyblue{
+    color: deepskyblue;
 }

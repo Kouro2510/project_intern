@@ -1,0 +1,4 @@
+.custompage{
+    display: flex;
+    flex-direction: column;
+}
