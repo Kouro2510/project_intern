@@ -9,36 +9,40 @@ import {
     FaStarHalfAlt,
     FaTwitter
 } from "react-icons/fa";
-import {AiOutlineHeart, AiOutlineQuestionCircle} from "react-icons/ai";
+import {AiOutlineHeart, AiOutlinePlus, AiOutlineQuestionCircle} from "react-icons/ai";
 import {Link} from "react-router-dom";
 import {useState} from "react";
+import {IoIosRemove} from "react-icons/io";
+import {MdAddShoppingCart} from "react-icons/md";
+import {BiChat, BiStore} from "react-icons/bi";
 
-const color=[
-    {id:1 ,color: "Đen"},
-    {id:2,color:"BE"},
-    {id:3,color:"CHÌ"},
-    {id:4,color:"June be"},
-    {id:5,color:"June chỉ"},
-    {id:6,color:"June đen"},
-    {id:7,color:"Tem be"},
-    {id:8,color:"Tem đen"},
-    {id:9,color:"Cá tính chỉ"},
-    {id:10,color:"Cá tính đen"},
-    {id:11,color:"Cá tính be"}
+const color = [
+    {id: 1, color: "Đen"},
+    {id: 2, color: "BE"},
+    {id: 3, color: "CHÌ"},
+    {id: 4, color: "June be"},
+    {id: 5, color: "June chỉ"},
+    {id: 6, color: "June đen"},
+    {id: 7, color: "Tem be"},
+    {id: 8, color: "Tem đen"},
+    {id: 9, color: "Cá tính chỉ"},
+    {id: 10, color: "Cá tính đen"},
+    {id: 11, color: "Cá tính be"}
 ]
-const size=[
-    {id:1,size:"Freesize"}
+const size = [
+    {id: 1, size: "Freesize"}
 ]
 const ProductDetails = () => {
     const [isShown, setIsShown] = useState(false);
-    const [isActive,setIsActive]=useState(false);
-    let isCount=0;
-    console.log(isCount)
-    const add=()=>{
-         isCount = isCount+1;
+    const [isActive, setIsActive] = useState(false);
+    const [amount, setAmount] = useState(1);
+    const add = () => {
+        setAmount(next => next + 1)
     }
-    const resmove =()=>{
-        isCount =isCount-1;
+    const resmove = () => {
+        if (amount > 1) {
+            setAmount(prev => prev - 1)
+        }
     }
     return (
         <div className="details">
@@ -63,33 +67,33 @@ const ProductDetails = () => {
                     </Carousel>
                     <div className="justify-content-center ">
                         <div className="flex gap-2 tab-gap">
-                            <p className="share ml-20">Chia sẻ:</p>
+                            <p className="share ml-20 ">Chia sẻ:</p>
                             <span className="gap-2">
-                                  <FaFacebookMessenger size="1.9vh" className="icon-details"
+                                  <FaFacebookMessenger size="2.9vh" className="icon-details"
                                                        style={{color: "#b739da"}}/>
-                                  <FaFacebook size="1.9vh" className="icon-details"
+                                  <FaFacebook size="2.9vh" className="icon-details"
                                               style={{color: "#1876f1"}}/>
-                                  <FaPinterest size="1.9vh" className="icon-details"
+                                  <FaPinterest size="2.9vh" className="icon-details"
                                                style={{color: "#e60124"}}/>
-                                  <FaTwitter size="1.9vh" className="icon-details"
+                                  <FaTwitter size="2.9vh" className="icon-details"
                                              style={{color: "#1876f1"}}/>
                             </span>
                         </div>
                         <div className="flex">
-                            <AiOutlineHeart size="1.9vh" className="icon-details pr-5" color="pink"/>
+                            <AiOutlineHeart size="2.9vh" className="icon-details pr-5" color="pink"/>
                             <p className="fav">Đã thích (4,6k)</p>
                         </div>
                     </div>
                 </div>
                 <div className="col-7 ml-10">
                     <div className="flex align-center">
-                        <p className="fz-10 btn-details w-15 text-center mr-10px py-2">Yêu thích</p>
-                        <span className="mt-1">[Mã FATET1701 giảm tới 30k đơn 99k] Áo khoác hoodie zip chất nỉ bông in số 336</span>
+                        <p className="fz-14 btn-details w-15 pt-22 text-center mr-10px py-2">Yêu thích</p>
+                        <span className="fz-medium">[Mã FATET1701 giảm tới 30k đơn 99k] Áo khoác hoodie zip chất nỉ bông in số 336</span>
                     </div>
                     <div className="flex">
                         <div className="flex ml-20 ratting">
-                            <p className="fz-10 underline text-red">4.6</p>
-                            <span className="mt-4px ml-2px">
+                            <p className="fz-14 underline text-red">4.6</p>
+                            <span className="mt-12px ml-2px">
                                 <FaStar size="1.5vh" className="text-red"/>
                                 <FaStar size="1.5vh" className="text-red"/>
                                 <FaStar size="1.5vh" className="text-red"/>
@@ -98,12 +102,12 @@ const ProductDetails = () => {
                             </span>
                         </div>
                         <div className="flex ratting">
-                            <p className="underline fz-10">3k</p>
-                            <p className="fz-10 ml-10">Đánh giá</p>
+                            <p className="underline fz-14">3k</p>
+                            <p className="fz-14 ml-10">Đánh giá</p>
                         </div>
                         <div className="flex">
-                            <p className="fz-10">8k4</p>
-                            <p className="fz-10 ml-10">Đã bán</p>
+                            <p className="fz-14">8k4</p>
+                            <p className="fz-14 ml-10">Đã bán</p>
                             <AiOutlineQuestionCircle size="1.5vh" className="point mt-12px ml-2"
                                                      onMouseEnter={() => setIsShown(!isShown)}
                                                      onMouseLeave={() => setIsShown(false)}/>
@@ -113,20 +117,20 @@ const ProductDetails = () => {
                                 </div>
                             )}
                         </div>
-                        <Link to="/" className="fz-10 report ml-40per">Tố cáo</Link>
+                        <Link to="/" className="fz-14 report ml-40per">Tố cáo</Link>
                     </div>
                     <div className="details price">
                         <div className=" discount flex">
-                            <p className="fz-8 py-15px ml-20 pr-5 line-through text-gray">
-                                đ<span className="fz-10">150.000</span>
-                            </p>
+                            <h1 className="fz-medium py-15px ml-20 pr-5 line-through text-gray">
+                                đ<span className="fz-medium">150.000</span>
+                            </h1>
 
-                            <div className="justify-content-space ">
-                                <h6 className="underline text-red fw-400">đ</h6>
-                                <h3 className="text-red fw-400">99.000</h3>
+                            <div className="justify-content-space mt-4px fz-medium ">
+                                <h3 className="underline text-red fw-400">đ</h3>
+                                <h1 className="text-red fw-400">99.000</h1>
 
                             </div>
-                            <p className=" btn-details personDiscount fw-400">Giảm 34%</p>
+                            <p className=" btn-details personDiscount fz-medium  fw-400">Giảm 34%</p>
                         </div>
                         <div className="flex discount ">
                             <svg xmlns="http://www.w3.org/2000/svg" width="33" height="16" viewBox="0 0 33 16"
@@ -174,14 +178,14 @@ const ProductDetails = () => {
                                     d="M27.8641 7.76164C27.6388 7.76164 27.4814 7.71307 27.393 7.61626C27.3046 7.51913 27.2444 7.34396 27.46 7.0587L27.7184 7.25395C27.6537 7.33975 27.6407 7.38637 27.6381 7.40256C27.6915 7.43753 27.9907 7.49743 28.7711 7.27175C29.4371 7.0791 30.1436 6.76341 30.661 6.42732C31.0541 6.17218 31.6868 5.67582 31.509 5.21928C31.4611 5.09624 31.3759 5.01432 31.2487 4.96867C30.6795 4.76501 29.4811 5.32419 29.0673 5.55699L28.9083 5.27497C28.9245 5.26591 29.3121 5.04865 29.801 4.86247C30.4794 4.60409 31.0029 4.53739 31.3575 4.66399C31.5751 4.7417 31.7276 4.88934 31.8104 5.10207C31.9526 5.4673 31.883 6.05108 30.7436 6.75823C30.1951 7.09853 29.4688 7.41325 28.8005 7.59975C28.4146 7.70789 28.1018 7.76164 27.8641 7.76164Z"
                                     fill="#EE4D2D"></path>
                             </svg>
-                            <div className=" flex-row ">
+                            <div className=" flex-col ">
                                 <div className="flex">
-                                    <p className="text-red fz-10 mt-0 mb-0">Gì cũng rẻ</p>
+                                    <p className="text-red fz-medium mt-0 mb-0">Gì cũng rẻ</p>
                                     <AiOutlineQuestionCircle size="1.5vh" className="point mt-4px ml-2"
                                                              onMouseEnter={() => setIsShown(!isShown)}
                                                              onMouseLeave={() => setIsShown(false)}/>
                                 </div>
-                                <p className="fz-8 mt-0 pb-2px">Giá tốt nhất so với các sản phẩm cùng loại trên
+                                <p className="fz-14 mt-0 pb-2px">Giá tốt nhất so với các sản phẩm cùng loại trên
                                     shoppe</p>
                             </div>
                         </div>
@@ -189,50 +193,242 @@ const ProductDetails = () => {
                     <div>
                         <ul>
                             <li className="flex gap-3rem">
-                                <p className="fz-10">Bảo hiểm:</p>
-                                <p className="fz-10">Bảo hiểm thời trang
+                                <p className="fz-14">Bảo hiểm:</p>
+                                <p className="fz-14">Bảo hiểm thời trang
                                     <span className=" cusNew ">Mới</span></p>
-                                <Link to="/" className="fz-10 mt-12px text-deepskyblue">Tìm Hiểu Thêm</Link>
+                                <Link to="/" className="fz-14 mt-12px text-deepskyblue">Tìm Hiểu Thêm</Link>
                             </li>
                             <li className="flex gap-3rem">
-                                <p className="fz-10">Vận chuyển:</p>
+                                <p className="fz-14">Vận chuyển:</p>
                                 <div>
                                     <div className="flex gap-2 mb-0">
-                                        <img src={Image.freeship} width="10%" height="30%" className="mt-12px"/>
-                                        <p className="fz-10">Miễn Phí Vận Chuyển</p>
+                                        <img src={Image.freeship} width="10%" height="30%" className="mt-12px" alt="/"/>
+                                        <p className="fz-14">Miễn Phí Vận Chuyển</p>
                                     </div>
                                 </div>
                                 <div className="flex gap-2 ">
-                                    <p className="fz-10">Phí vận chuyển</p>
+                                    <p className="fz-14">Phí vận chuyển</p>
                                     <div className="flex">
-                                        <p className="fz-10">đ</p>
-                                        <p className="fz-10">0</p>
+                                        <p className="fz-14">đ</p>
+                                        <p className="fz-14">0</p>
                                     </div>
                                 </div>
                             </li>
                             <li className="flex gap-3rem">
-                                <p className="fz-10">Màu sắc:</p>
+                                <p className="fz-14">Màu sắc:</p>
                                 <div className="w-75">
-                                    {color.map((item)=>(
-                                        <button onClick={()=>setIsActive(item.id)} className={`fz-10  w-fit  color ${isActive===item.id ?"active":""} `}>{item.color}</button>
+                                    {color.map((item) => (
+                                        <button onClick={() => setIsActive(item.id)}
+                                                className={`fz-14  w-fit  color ${isActive === item.id ? "active" : ""} `}>{item.color}</button>
                                     ))}
                                 </div>
                             </li>
                             <li className="flex gap-3rem">
-                                <p className="fz-10">Màu sắc:</p>
+                                <p className="fz-14">Màu sắc:</p>
                                 <div className="w-75">
-                                    {size.map((item)=>(
-                                        <button onClick={()=>setIsActive(item.id)} className={`fz-10  w-fit  color ${isActive===item.id ?"active":""} `}>{item.size}</button>
+                                    {size.map((item) => (
+                                        <button onClick={() => setIsActive(item.id)}
+                                                className={`fz-14  w-fit  color ${isActive === item.id ? "active" : ""} `}>{item.size}</button>
                                     ))}
                                 </div>
                             </li>
-                            <li className="flex gap-3rem">
-                                <p className="fz-10">Số lượng:</p>
-                                <input type="button" value="+" onClick={add}/>
-                                <input type="number" value={isCount}/>
-                                <input type="button" value="-" onClick={resmove}/>
+                            <li className="flex gap-3rem  amount">
+                                <p className="fz-14">Số lượng:</p>
+                                <div className="flex w-fit">
+                                    <div className="flex amount-count">
+                                        <button onClick={resmove}><IoIosRemove/></button>
+                                        <input type={"text"} value={amount}/>
+                                        <button onClick={add}><AiOutlinePlus/></button>
+                                    </div>
+                                    <p className="fz-14">84 sản phẩm có sẵn</p>
+                                </div>
                             </li>
                         </ul>
+                        <div className="ml-50">
+                            <button className="addtocart"><MdAddShoppingCart/>Thêm vào giỏ hàng</button>
+                            <button className="buynow btn-details">Mua ngay</button>
+                        </div>
+
+                        <div className="pt-22 end-to-details mb-15 flex ">
+                            <div className="flex logo-end">
+                                <img src={Image.baove} width="9%" height="40%" className="mt-15px mr-10px" alt="/"/>
+                                <h3 className="fw-600 fz-medium">Shoppe đảm bảo</h3>
+                            </div>
+                            <p className="fz-10 datetime"> 3 Ngày Trả Hàng/Hoàn Tiền</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div className="container-details">
+                <div className="flex mb-15">
+                    <img src={Image.cart} className="logoshop" alt="/"/>
+                    <div className="mx-3">
+                        <p className="fz-14">Shopppppp</p>
+                        <p className="fz-14">Online 14p trước</p>
+                        <button className="chatnow"><BiChat className="pt-10"/>Chat ngay</button>
+                        <button className="store"><BiStore/>Xem shop</button>
+                    </div>
+                </div>
+                <div className="flex review">
+                    <ul>
+                        <li className="fz-14 flex gap-1rem">
+                            <p>
+                                Đánh giá
+                            </p>
+                            <p className="text-red">
+                                138,7k
+                            </p>
+                        </li>
+                        <li className="fz-14 flex gap-1rem">
+                            <p>
+                                Sản phẩm
+                            </p>
+                            <p className="text-red">
+                                138,7k
+                            </p>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li className="fz-14 flex gap-1rem">
+                            <p>
+                                Tỉ lệ phản hồi
+                            </p>
+                            <p className="text-red">
+                                138,7k
+                            </p>
+                        </li>
+                        <li className="fz-14 flex gap-1rem">
+                            <p>
+                                Thời gian phản hồi
+                            </p>
+                            <p className="text-red">
+                                138,7k
+                            </p>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li className="fz-14 flex gap-1rem">
+                            <p>
+                                Tham gia
+                            </p>
+                            <p className="text-red">
+                                138,7k
+                            </p>
+                        </li>
+                        <li className="fz-14 flex gap-1rem">
+                            <p>
+                                Người theo dõi
+                            </p>
+                            <p className="text-red">
+                                138,7k
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div className="container-details flex flex-col">
+                <div className="page-titleItem">
+                    <h1 className="details titleItem fw-400"> Chi tiết sản phẩm</h1>
+                    <div>
+                        <ul className="fz-medium">
+                            <li className="flex gap-3rem">
+                                <p className="fz-14" style={{color: "rgba(0,0,0,.4)"}}>Danh Mục</p>
+                                <div className="fz-14 mt-15px">
+                                    <Link to="/">Shoppe</Link>
+                                    >
+                                    <Link to="/">Shoppe</Link>
+                                    >
+                                    <Link to="/">Shoppe</Link>
+                                    >
+                                    <Link to="/">Shoppe</Link>
+                                </div>
+                            </li>
+                            <li className="flex gap-3rem">
+                                <p className="fz-14" style={{color: "rgba(0,0,0,.4)"}}>Chiều dài tay áo:</p>
+                                <p className="fz-14">Dài Tay</p>
+
+                            </li>
+                            <li className="flex gap-3rem">
+                                <p className="fz-14" style={{color: "rgba(0,0,0,.4)"}}>Phong cách</p>
+                                <p className="fz-14">Hàn Quốc</p>
+
+                            </li>
+                            <li className="flex gap-3rem">
+                                <p className="fz-14" style={{color: "rgba(0,0,0,.4)"}}>Chiều dài áo</p>
+                                <p className="fz-14">Dài</p>
+                            </li>
+                            <li className="flex gap-3rem  amount">
+                                <p className="fz-14" style={{color: "rgba(0,0,0,.4)"}}>Mùa</p>
+                                <div className="flex w-fit">
+                                    <p className="fz-14">Đông</p>
+                                </div>
+                            </li>
+                            <li className="flex gap-3rem  amount">
+                                <p className="fz-14" style={{color: "rgba(0,0,0,.4)"}}>Chất liệu</p>
+                                <div className="flex w-fit">
+                                    <p className="fz-14">Nỉ</p>
+                                </div>
+                            </li>
+                            <li className="flex gap-3rem  amount">
+                                <p className="fz-14" style={{color: "rgba(0,0,0,.4)"}}>Số lượng hàng kh...</p>
+                                <div className="flex w-fit">
+                                    <p className="fz-14">84 sản phẩm có sẵn</p>
+                                </div>
+                            </li>
+                            <li className="flex gap-3rem  amount">
+                                <p className="fz-14" style={{color: "rgba(0,0,0,.4)"}}>Số lượng hàng còn lại</p>
+                                <div className="flex w-fit">
+                                    <p className="fz-14">84 sản phẩm có sẵn</p>
+                                </div>
+                            </li>
+                            <li className="flex gap-3rem  amount">
+                                <p className="fz-14" style={{color: "rgba(0,0,0,.4)"}}>Gửi từ</p>
+                                <div className="flex w-fit">
+                                    <p className="fz-14">Hà Lội</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div className="page-titleItem">
+                    <h1 className="details fz-medium titleItem fw-400"> Mô tả sản phẩm</h1>
+                    <div>
+                        <ul className="fz-medium">
+                            <li className="flex gap-3rem">
+                                <div className="fz-medium" style={{margin: 0}}>
+                                    <p>✅ MÔ TẢ SẢN PHẨM</p>
+
+                                    <p>✅ áo khoác hoodie zip unisex nam nữ form rộng chất nỉ bông 2 lớp dày đẹp, được
+                                        thiết kế theo phong cách hàn quốc trẻ trung năng động thích hợp mặc hàng ngày,
+                                        mặc đi chơi, đi dạo phố, form rộng rất dễ phối đồ, mix với chân váy hay quần
+                                        jean đều rất đẹp</p>
+                                    <ul>-THÀNH PHẦN
+                                        <li>✪ Chất Liệu Vải : nỉ bông 2 lớp</li></ul>
+                                    <ul>-THÔNG SỐ KỸ THUẬT
+                                        <li>✪ Kĩ thuật may: Kĩ thuật may chỉ mau đảm bảo độ bền đẹp</li>
+                                        <li>✪ Mực in: Mực in decal cao cấp đảm bảo không ra màu không bong tróc khi
+                                            giặt
+                                        </li>
+                                        <li>✪ Kiểu Dáng : áo có mũ</li>
+                                        <li>✪size; freesize 70kg</li>
+                                        <li>✪ số đo áo hoodie ; dài 70cm / ngang áo 60cm/ tay áo 60cm</li>
+                                    </ul>
+                                    <p>-------------------------------------------</p>
+                                    <p>-Năm sản xuất 2022</p>
+                                    <p>-Xuất xứ ; việt nam</p>
+                                    <p>-Địa chỉ sản xuất ; xuân đỉnh bắc từ liêm thành phố hà nội</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+            <div className="container-details flex-col">
+                <h1 className="fw-400 ml-20">Đánh giá sản phẩm</h1>
+                <div className="ml-20">
+                    <div>
+                        <h1 className="commentItem text-red">4.6 <span >trên 5</span></h1>
                     </div>
                 </div>
             </div>

@@ -7,7 +7,7 @@
 .container-details{
     display: flex;
     background-color: #ffffff;
-    margin: 3% 15% 2% 15%;
+    margin: 10px 15% 15px 15%;
 }
 .discount{
     margin: 1% 5%;
@@ -24,8 +24,9 @@
     border: 2px solid #333 !important;
 }
 .share{
-    font-size: 13px;
+    font-size: medium;
     font-weight: 400;
+    margin-top: 20px;
 }
 .tab-gap::after{
     content: "";
@@ -33,8 +34,9 @@
     border-left: 1px black solid;
 }
 .fav{
-    font-size: 13px;
+    font-size: medium;
     font-weight: 400;
+    margin-top: 20px;
 }
 
 .icon-details{
@@ -65,7 +67,7 @@
     text-align: center;
     display: flex;
     align-items: center;
-    margin: 25px 0;
+    margin: 20px 0;
     padding: 0 5px;
 }
 .tooltip{
@@ -95,4 +97,86 @@
 }
 .active{
     border: .1rem #da1515 solid;
+}
+.amount-count{
+    padding-top: 10px;
+}
+.amount-count button{
+    padding: 0 10px;
+    height: 30px;
+}
+.amount-count input{
+    text-align: center;
+    width: 40%;
+    margin: 0 2px;
+    height: 30px;
+}
+.addtocart{
+    color: #ee4d2d;
+    background-color: #ff57221a;
+    font-size: 2rem;
+    padding: 10px;
+    margin-right: 20px;
+    border: 1px red solid;
+}
+.buynow{
+    font-size: 2rem;
+    padding: 10px;
+    margin-right: 20px;
+    border: 1px red solid;
+}
+.logo-end{
+    margin-right: 65px;
+}
+.datetime{
+    margin-top: 15px;
+}
+.logoshop{
+    width: 25%;
+    height: 100%;
+    border-radius: 50%;
+    padding: 0 20px;
+}
+.chatnow{
+    color: #ee4d2d;
+    background-color: #ff57221a;
+    font-size: 1.5rem;
+    padding: 5px 15px;
+    margin-right: 20px;
+    border: 1px red solid;
+}
+.store{
+    padding:5px 10px;
+    border: 1px #B3B3B3 solid;
+    background: #fdf7f7;
+}
+.review{
+    margin-right: -200px;
+    padding: 10px 0px;
+    height: 100px;
+}
+.review::before{
+    border-left: #B3B3B3 1px solid;
+    content: "";
+    padding: 60px 0;
+}
+.titleItem{
+    margin-left: 10%;
+    padding-left: 5% !important;
+    width: 100vh;
+    background: rgba(0,0,0,.02);
+    color: rgba(0,0,0,.87);
+    font-size: 2rem;
+    padding: 1.5rem;
+    font-weight: 700;
+    text-transform: capitalize;
+}
+.page-titleItem{
+    padding: .9375rem .9375rem 0;
+}
+.commentItem{
+    font-size: 30px;
+}
+.commentItem span{
+    font-size: 20px;
 }
