@@ -32,6 +32,26 @@ const color = [
 const size = [
     {id: 1, size: "Freesize"}
 ]
+const starts = [
+    {
+        id: 1, title: "Tất cả", review: "9999"
+    },
+    {
+        id: 2, title: "5 sao", review: "3k9"
+    },
+    {
+        id: 3, title: "4 sao", review: "2k8"
+    },
+    {
+        id: 4, title: "3 sao", review: "200"
+    },
+    {
+        id: 5, title: "2 sao", review: "40"
+    },
+    {
+        id: 1, title: "1 sao", review: "0"
+    },
+]
 const ProductDetails = () => {
     const [isShown, setIsShown] = useState(false);
     const [isActive, setIsActive] = useState(false);
@@ -426,9 +446,67 @@ const ProductDetails = () => {
             </div>
             <div className="container-details flex-col">
                 <h1 className="fw-400 ml-20">Đánh giá sản phẩm</h1>
-                <div className="ml-20">
-                    <div>
-                        <h1 className="commentItem text-red">4.6 <span >trên 5</span></h1>
+                <div className="ml-20 ">
+                    <div className="rattingItem justify-content-space">
+                        <div>
+                            <h1 className="commentItem text-red">4.6 <span>trên 5</span></h1>
+                            <span className="mt-12px ml-2px">
+                                <FaStar size="2.5vh" className="text-red"/>
+                                <FaStar size="2.5vh" className="text-red"/>
+                                <FaStar size="2.5vh" className="text-red"/>
+                                <FaStar size="2.5vh" className="text-red"/>
+                                <FaStarHalfAlt size="2.5vh" className="text-red"/>
+                            </span>
+                        </div>
+                        <div className="w-75">
+                            {starts.map((item) => (
+                                <button onClick={() => setIsActive(item.id)}
+                                        className={`fz-14  w-fit  color ${isActive === item.id ? "active" : ""} `}>{item.title}({item.review})</button>
+                            ))}
+                        </div>
+                    </div>
+                    <div className="commentItem flex">
+                        <img src={Image.Test5} className="mr-10px"/>
+                        <div>
+                            <p className="fz-10">Name</p>
+                            <span className="mt-12px ml-2px">
+                                <FaStar size="1.5vh" className="text-red"/>
+                                <FaStar size="1.5vh" className="text-red"/>
+                                <FaStar size="1.5vh" className="text-red"/>
+                                <FaStar size="1.5vh" className="text-red"/>
+                                <FaStarHalfAlt size="1.5vh" className="text-red"/>
+                            </span>
+                            <p>2023-01-10 18:01 | Phân loại hàng: CHÌ,Freesize</p>
+                            <ul className="fz-medium">
+                                <li className="flex gap-3rem">
+                                    <p className="fz-8" style={{color: "rgba(0,0,0,.4)"}}>Chiều dài tay áo:</p>
+                                    <p className="fz-8">Dài Tay</p>
+
+                                </li>
+                                <li className="flex gap-3rem">
+                                    <p className="fz-8" style={{color: "rgba(0,0,0,.4)"}}>Phong cách</p>
+                                    <p className="fz-8">Hàn Quốc</p>
+
+                                </li>
+                                <li className="flex gap-3rem">
+                                    <p className="fz-8" style={{color: "rgba(0,0,0,.4)"}}>Chiều dài áo</p>
+                                    <p className="fz-8">Dài</p>
+                                </li>
+                                <li className="flex gap-3rem  amount">
+                                    <p className="fz-8" style={{color: "rgba(0,0,0,.4)"}}>Mùa</p>
+                                    <div className="flex w-fit">
+                                        <p className="fz-8">Đông</p>
+                                    </div>
+                                </li>
+                            </ul>
+                            <p>
+                                Áo rộng thoải mái</p>
+                            <p>Mũ to 2 lớp</p>
+                            <p>Áo k đc dày dặn cho lắm nhưng tạm ổn</p>
+                            <p>Tay áo bị rách 1 xíu khâu lại là đc</p>
+                            <p>Nói chung ổn, giá cả hợp lí nên mua nha mn.
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>

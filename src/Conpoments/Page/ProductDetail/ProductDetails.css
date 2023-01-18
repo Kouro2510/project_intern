@@ -175,8 +175,22 @@
     padding: .9375rem .9375rem 0;
 }
 .commentItem{
-    font-size: 30px;
+    border-top: #110202 1px solid;
+    width: 75%;
+    margin-left: 10%;
+    margin-top: 2%;
+    padding-top: 2%;
+    padding-bottom: 2%;
 }
-.commentItem span{
-    font-size: 20px;
+.commentItem img{
+    width: 5%;
+    border-radius: 50%;
+    height: 20%;
+}
+.rattingItem{
+    margin-left: 50px;
+    background-color: #fffbf8;
+    padding:20px 30px;
+    margin-right: 30px;
+    margin-bottom: 20px;
 }
